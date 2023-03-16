@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	char *msg = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *msg = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n\n";
 
 	write(STDERR_FILENO, msg, 58);
 	return (1);
