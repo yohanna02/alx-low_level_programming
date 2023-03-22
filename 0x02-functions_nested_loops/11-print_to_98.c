@@ -7,7 +7,7 @@
  */
 void update(int *n)
 {
-	if (n > 98)
+	if (*n > 98)
 		*n--;
 	else
 		*n++;
