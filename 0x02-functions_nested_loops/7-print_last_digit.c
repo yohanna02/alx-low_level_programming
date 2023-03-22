@@ -9,7 +9,7 @@
  */
 int print_last_digit(int n)
 {
-	unsigned int abs_value;
+	unsigned long int abs_value;
 	int last_digit;
 	
 	if (n == INT_MIN)
