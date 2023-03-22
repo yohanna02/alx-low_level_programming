@@ -7,19 +7,34 @@
  */
 void print_to_98(int n)
 {
-	int i;
-
-	for (i = n; i <= 98; i++)
+	while (n != 98)
 	{
-		if (i >= 10)
+		int tens = n / 10;
+		int ones = n % 10;
+
+		if (n < 0)
 		{
-			_putchar(1 / 10 + '0');
+			_putchar('-');
+			tens *= -1;
+			ones *= -1;
 		}
-		_putchar(i % 10 + '0');
-		if (i < 98)
+		if (tens > 0)
 		{
-			_putchar(',');
-			_putchar(' ');
+			_putchar(tens + '0');
+		}
+		_putchar(ones + '0');
+		_putchar(',');
+		_putchar(' ');
+		if (n > 98)
+		{
+			n--;
+		}
+		else
+		{
+			n++;
 		}
 	}
+	_putchar('9');
+	_putchar('8');
+	_putchar('\n');
 }
