@@ -12,7 +12,7 @@ int print_last_digit(int n)
 	int abs_value;
 	int last_digit;
 	
-	puts(n);
+	printf(n);
 	if (n < 0)
 		abs_value = n * -1;
 	else
