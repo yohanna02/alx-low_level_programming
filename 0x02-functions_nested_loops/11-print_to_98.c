@@ -20,7 +20,7 @@ void print_to_98(int n)
 			tens *= -1;
 			ones *= -1;
 		}
-		if (tens > 10)
+		if (tens >= 10)
 		{
 			temp = tens;
 			more_tens = tens / 10;
