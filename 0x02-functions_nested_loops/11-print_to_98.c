@@ -1,6 +1,19 @@
 #include "main.h"
 
 /**
+ * update - update counter
+ * @n: number to update
+ * Return: void
+ */
+void update(int *n)
+{
+	if (n > 98)
+		*n--;
+	else
+		*n++;
+}
+
+/**
  * print_to_98 - prints natural number to 98
  * @n: number to start counting
  * Return: void
@@ -38,14 +51,7 @@ void print_to_98(int n)
 		_putchar(ones + '0');
 		_putchar(',');
 		_putchar(' ');
-		if (n > 98)
-		{
-			n--;
-		}
-		else
-		{
-			n++;
-		}
+		update(&n);
 	}
 	_putchar('9');
 	_putchar('8');
