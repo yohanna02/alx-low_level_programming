@@ -9,11 +9,11 @@
  */
 int print_last_digit(int n)
 {
-	unsigned int abs_value;
+	int abs_value;
 	int last_digit;
 	
 	if (n == INT_MIN)
-		abs_value = INT_MAX + 1;
+		abs_value = -(INT_MIN);
 	else if(n < 0)
 		abs_value = n * -1;
 	else
