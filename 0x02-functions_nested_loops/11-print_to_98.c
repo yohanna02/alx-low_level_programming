@@ -29,8 +29,9 @@ void print_to_98(int n)
 			{
 				_putchar(more_tens + '0');
 			}
+			_putchar(tens + '0');
 		}
-		if (tens > 0)
+		else if (tens > 0)
 		{
 			_putchar(tens + '0');
 		}
