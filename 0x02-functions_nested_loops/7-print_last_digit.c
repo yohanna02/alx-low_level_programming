@@ -12,11 +12,11 @@ int print_last_digit(int n)
 	int abs_value;
 	int last_digit;
 	
-	printf("%d", n);
 	if (n < 0)
 		abs_value = n * -1;
 	else
 		abs_value = n;
+	printf("a - %d\n", abs_value);
 	last_digit = abs_value % 10;
 	_putchar(last_digit + '0');
 
