@@ -56,7 +56,10 @@ int main(void)
 		{
 			print_number(i);
 		}
-		_putchar(' ');
+		if (i !== 100)
+		{
+			_putchar(' ');
+		}
 	}
 	_putchar('\n');
 	return (0);
