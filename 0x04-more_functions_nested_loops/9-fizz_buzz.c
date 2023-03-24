@@ -56,7 +56,7 @@ int main(void)
 		{
 			print_number(i);
 		}
-		if (i !== 100)
+		if (i != 100)
 		{
 			_putchar(' ');
 		}
