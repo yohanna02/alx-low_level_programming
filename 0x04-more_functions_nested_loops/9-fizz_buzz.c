@@ -18,6 +18,19 @@ void print_string(char string[])
 }
 
 /**
+ * print_number - prints any number
+ * @number: the number to print
+ * Return: void
+ */
+void print_number(int number)
+{
+	if (number / 10 != 0)
+		print_number(number / 10);
+
+	_putchar(number % 10 + '0');
+}
+
+/**
  * main - entry point
  * Return: Always 0 on success
  */
@@ -38,6 +51,10 @@ int main(void)
 		else if (i % 5 == 0)
 		{
 			print_string("Buzz");
+		}
+		else
+		{
+			print_number(i);
 		}
 		_putchar(' ');
 	}
