@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_string - prints a string
+ * @string: string to print
+ * Return: void
+ */
 void print_string(char string[])
 {
 	int i;
@@ -24,7 +29,7 @@ int main(void)
 	{
 		if ((i % 3 == 0) && (i % 5) == 0)
 		{
-			print_string("FizzBuzz");	
+			print_string("FizzBuzz");
 		}
 		else if (i % 3 == 0)
 		{
@@ -34,9 +39,8 @@ int main(void)
 		{
 			print_string("Buzz");
 		}
-		_putchar(" ");
+		_putchar(' ');
 	}
 	_putchar('\n');
-
 	return (0);
 }
