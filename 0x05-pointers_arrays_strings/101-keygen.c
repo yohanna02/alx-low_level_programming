@@ -19,6 +19,6 @@ int main(void)
         password[i] = rand() % 94 + 33;
     password[8] = '\0';
 
-    printf("%s\n", password);
+    printf("Tada! Congrats\n");
     return (0);
 }
