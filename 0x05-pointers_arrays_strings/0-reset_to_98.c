@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * add - adds to number
+ * reset_to_98 - changef paramenter pointer value to 98
  * @n: number
  *
  * Return: void
