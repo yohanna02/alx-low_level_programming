@@ -1,0 +1,28 @@
+#include "main.h"
+
+/**
+ * puts_half - puts more char
+ * @str: string to puts
+ * Return: void
+ */
+void puts_half(char *str)
+{
+	int length = 0;
+	int n = 0;
+	int i = 0;
+
+	while (*(s + length) != '\0')
+	{
+		length++;
+	}
+	n = length / 2;
+	if (length % 2 != 0)
+	{
+		n = (length - 1) / 2;
+	}
+	for (i = n; i < length; i++)
+	{
+		_putchar('\n');
+	}
+	_putchar('\n');
+}
