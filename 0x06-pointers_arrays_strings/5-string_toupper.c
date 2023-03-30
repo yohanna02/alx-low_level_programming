@@ -8,6 +8,7 @@
 char *string_toupper(char *s)
 {
 	char *p = s;
+
 	while (*p)
 	{
 		if (*p >= 97 && *p <= 122)
