@@ -31,6 +31,10 @@ char *cap_string(char *s)
 		{
 			uppercase = 0;
 		}
+		else
+		{
+			uppercase = 0;
+		}
 		p++;
 	}
 	return (s);
