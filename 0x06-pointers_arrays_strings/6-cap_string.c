@@ -22,6 +22,7 @@ char *cap_string(char *s)
 		if (*p >= 'a' && *p <= 'z' && uppercase)
 		{
 			*p -= 32;
+			uppercase = 0;
 		}
 		p++;
 	}
