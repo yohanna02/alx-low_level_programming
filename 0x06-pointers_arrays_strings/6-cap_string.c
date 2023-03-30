@@ -18,10 +18,17 @@ char *cap_string(char *s)
 		{
 			uppercase = 1;
 		}
-
-		if (*p >= 'a' && *p <= 'z' && uppercase)
+		else if (*p >= 'A' && *p <= 'Z' && !uppercase)
+		{
+			*p += 32;
+		}
+		else if (*p >= 'a' && *p <= 'z' && uppercase)
 		{
 			*p -= 32;
+			uppercase = 0;
+		}
+		else
+		{
 			uppercase = 0;
 		}
 		p++;
