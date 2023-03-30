@@ -8,7 +8,7 @@
 char *cap_string(char *s)
 {
 	char *p = s;
-	int uppercase = 0;
+	int uppercase = 1;
 
 	while (*p)
 	{
