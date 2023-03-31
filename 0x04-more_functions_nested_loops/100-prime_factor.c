@@ -11,13 +11,16 @@ int main(void)
 {
 	long int n = 612852475143;
 	long int maxPrime = -1;
+	int i;
+	int num;
+	int rev;
 
 	while (n % 2 == 0)
 	{
 		maxPrime = 2;
 		n >>= 1;
 	}
-	for (int i = 3; i <= sqrt(n); i += 2)
+	for (i = 3; i <= sqrt(n); i += 2)
 	{
 		while (n % i == 0)
 		{
@@ -29,8 +32,8 @@ int main(void)
 		maxPrime = n;
 
 	/* print result using _putchar */
-	int num = maxPrime;
-	int rev = 0;
+	num = maxPrime;
+	rev = 0;
 
 	while (num != 0)
 	{
@@ -55,5 +58,5 @@ int main(void)
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	return (fwrite(1, &c, 1));
 }
