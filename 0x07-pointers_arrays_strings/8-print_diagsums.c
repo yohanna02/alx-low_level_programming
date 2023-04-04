@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_diagsums
+ * print_diagsums - sum the array in diagonal form
  * @a: array to sum
  * @size: size of array
  * Return: void
