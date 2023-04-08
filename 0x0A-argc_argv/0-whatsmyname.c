@@ -2,13 +2,13 @@
 
 /**
  * main - Entry point
- * @agrc: agument count
- * @agrv: agument vector
+ * @argc: agument count
+ * @argv: agument vector
  * Return: 0 success
  */
-int main (int agrc, char *argv[])
+int main(int argc, char *argv[])
 {
-	agrc = 0;
-	printf("%s\n", argv[agrc]);
+	argc = 0;
+	printf("%s\n", argv[argc]);
 	return (0);
 }
