@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	change = atoi(argv[1]);
 	while (1)
 	{
-		if (change == 0)
+		if (change == 0 || change < 0)
 			break;
 		if (change >= 25)
 			change -= 25;
