@@ -52,7 +52,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	length = _strlen(str);
-	string = malloc(sizeof(char) * length);
+	string = malloc((sizeof(char) * length) + 1);
 	_strcpy(string, str);
 	return (string);
 }
