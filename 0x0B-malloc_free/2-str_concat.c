@@ -26,13 +26,22 @@ int _strlen(char *s)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int len1 = _strlen(s1);
-	int len2 = _strlen(s2);
+	int len1 = 0;
+	int len2 = 0;
 	int new_len = len1 + len2;
-	char *string = malloc((sizeof(char) * new_len) + 1);
+	char *string;
 	int i;
 	int j;
 
+	if (s1 != NULL)
+	{
+		len1 = _strlen(s1);
+	}
+	if (s2 != NULL)
+	{
+		len2 = _strlen(s2);
+	}
+	string = malloc((sizeof(char) * new_len) + 1);
 	if (string == NULL)
 	{
 		return (NULL);
