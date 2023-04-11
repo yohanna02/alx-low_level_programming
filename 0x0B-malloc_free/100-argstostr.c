@@ -34,7 +34,7 @@ char *argstostr(int ac, char **av)
 	int ac_range;
 	int length;
 
-	if (ac > 1 || av == NULL)
+	if (ac < 1 || av == NULL)
 	{
 		return (NULL);
 	}
