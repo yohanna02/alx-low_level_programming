@@ -26,37 +26,29 @@ int _strlen(char *s)
  */
 char *argstostr(int ac, char **av)
 {
-	char *string;
-	int total_length;
-	int i;
-	int j;
-	int k;
-	int ac_range;
-	int length;
+	char *str;
+	int i, j, k, len;
 
-	if (ac < 1 || av == NULL)
-	{
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	}
-	ac_range = ac - 1;
-	for (i = 1; i <= ac_range; i++)
+
+	for (i = 0, len = 0; i < ac; i++)
 	{
-		total_length += _strlen(av[i]);
+		len += _strlen(av[i]) + 1;
 	}
-	string = malloc((sizeof(char) * total_length) + total_length + 1);
-	if (string == NULL)
-	{
+
+	str = malloc((len + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
-	}
-	for (i = 0, k = 0; i < ac_range; i++)
+
+	for (i = 0, k = 0; i < ac; i++)
 	{
-		length = _strlen(av[i]);
-		for (j = 0; j < length; j++, k++)
+		for (j = 0; av[i][j] != '\0'; j++, k++)
 		{
-			string[k] = av[i][j];
+			str[k] = av[i][j];
 		}
-		string[k] = '\n';
+		str[k++] = '\n';
 	}
-	string[k] = '\0';
-	return (string);
+	str[k] = '\0';
+	return (str);
 }
