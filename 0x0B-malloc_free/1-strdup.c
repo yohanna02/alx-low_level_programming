@@ -53,6 +53,10 @@ char *_strdup(char *str)
 	}
 	length = _strlen(str);
 	string = malloc((sizeof(char) * length) + 1);
+	if (string == NULL)
+	{
+		return (NULL);
+	}
 	_strcpy(string, str);
 	return (string);
 }
