@@ -2,6 +2,25 @@
 #include <stdlib.h>
 
 /**
+ * _memset - memset function
+ * @s: string to over ride
+ * @b: char to over partd of @s
+ * @n: number of @s string to over ride
+ * Return: pointer to @s
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i = 0;
+
+	while (s[i] != '\0' && i < n && b != '\0')
+	{
+		s[i] = b;
+		i++;
+	}
+	return (s);
+}
+
+/**
  * _calloc - recreating calloc
  * @nmemb: number of items
  * @size: size of items
@@ -9,7 +28,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *p;
+	void *p;
 	size_t i;
 
 	if (nmemb == 0 || size == 0)
@@ -22,9 +41,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < nmemb; i++)
-	{
-		p[i] = 0;
-	}
+	_memset(p, 0, nmemb * size);	
 	return (p);
 }
