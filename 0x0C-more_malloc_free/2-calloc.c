@@ -10,7 +10,7 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i = 0;
+	size_t i = 0;
 
 	while (s[i] != '\0' && i < n && b != '\0')
 	{
@@ -29,7 +29,6 @@ char *_memset(char *s, char b, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *p;
-	size_t i;
 
 	if (nmemb == 0 || size == 0)
 	{
