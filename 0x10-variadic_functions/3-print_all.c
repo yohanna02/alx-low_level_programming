@@ -11,6 +11,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg_list;
 	int i = 0;
+	int j;
 	char *str;
 
 	va_start(arg_list, format);
@@ -25,7 +26,7 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(arg_list, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(arg_list, float));
+				printf("%f", va_arg(arg_list, double));
 				break;
 			case 's':
 				str = va_arg(arg_list, char *);
@@ -39,7 +40,12 @@ void print_all(const char * const format, ...)
 				}
 				break;
 		}
+		j = i;
 		i++;
+		if ((format[i]) && (format[j] == 'c' || format[j] == 'i' || format[j] == 'f' || format[j] == 's'))
+		{
+			printf(", ");
+		}
 	}
 	putchar('\n');
 	va_end(arg_list);
