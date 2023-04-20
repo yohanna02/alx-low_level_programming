@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 		}
 		j = i;
 		i++;
-		if ((format[*i]) &&
+		if ((format[i]) &&
 		(format[j] == 'c' ||
 		 format[j] == 'i' ||
 		 format[j] == 'f' ||
