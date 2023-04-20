@@ -3,6 +3,27 @@
 #include <stdio.h>
 
 /**
+ * print_comma - print comma and space
+ * @format: datatype format
+ * @i: current position
+ * @j: previous position
+ * Return: void
+ */
+void print_comma(const char * const format, int *i, int *j)
+{
+	*j = *i;
+	*i++;
+	if ((format[*i]) &&
+	(format[*j] == 'c' ||
+	 format[*j] == 'i' ||
+	 format[*j] == 'f' ||
+	 format[*j] == 's'))
+	{
+		printf(", ");
+	}
+}
+
+/**
  * print_all - print any datatype
  * @format: format of type
  * Return: void
@@ -33,19 +54,13 @@ void print_all(const char * const format, ...)
 				if (str == NULL)
 				{
 					printf("(nil)");
+					print_comma(format, &i, &j);
+					continue;
 				}
-				else
-				{
-					printf("%s", str);
-				}
+				printf("%s", str);
 				break;
 		}
-		j = i;
-		i++;
-		if ((format[i]) && (format[j] == 'c' || format[j] == 'i' || format[j] == 'f' || format[j] == 's'))
-		{
-			printf(", ");
-		}
+		print_comma(format, &i, &j);
 	}
 	putchar('\n');
 	va_end(arg_list);
