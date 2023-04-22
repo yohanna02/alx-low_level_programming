@@ -2,10 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * main - entry point
+ * @argc: Argument count
+ * @argv: Argument vector
+ * Return: 0 if success
+ */
 int main(int argc, char  *argv[])
 {
 	int a, b;
-	char* op;
+	char *op;
 	int ans;
 	int (*f)(int, int);
 
@@ -14,7 +20,7 @@ int main(int argc, char  *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	a = atoi(argv[1]);
 	op = argv[2];
 	b = atoi(argv[3]);
