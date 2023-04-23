@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int i, n;
-  unsigned char *p;
+	unsigned char *p;
 
 	if (argc != 2)
 	{
@@ -33,3 +33,4 @@ int main(int argc, char *argv[])
 	printf("\n");
 	return (0);
 }
+
