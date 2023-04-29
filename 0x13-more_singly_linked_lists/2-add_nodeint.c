@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * add_node - Adds a new node at the beginning
+ * add_nodeint - Adds a new node at the beginning
  * @head: pointer to the head of the linked list
  * @n: string to add
  * Return: The address of the new element, or NULL if it failed
