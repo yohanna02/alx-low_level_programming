@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 #include <fcntl.h>
 
 /**
@@ -52,11 +53,10 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	if (text_content == NULL)
 	{
-		close(file);
 		return (1);
 	}
 
-	file = open(filename, O_APPEND | O_CREAT | O_WRONLY);
+	file = open(filename, O_APPEND | O_CREAT | O_WRONLY, 0600);
 	if (file == -1)
 	{
 		return (-1);
