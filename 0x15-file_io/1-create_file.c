@@ -3,11 +3,12 @@
 
 /**
  * flush_buffer - print the buffer to stdout
+ * @file: file to print
  * @buffer: the buffer to add the string to
  * @buffer_index: the index of the string
  * Return: void
  */
-void flush_buffer(int* file, char *buffer, int *buffer_index)
+void flush_buffer(int *file, char *buffer, int *buffer_index)
 {
 	write(*file, buffer, *buffer_index);
 	*buffer_index = 0;
@@ -15,6 +16,7 @@ void flush_buffer(int* file, char *buffer, int *buffer_index)
 
 /**
  * add_to_buffer - add a string to the buffer
+ * @file: file to print
  * @buffer: the buffer to add the string to
  * @buffer_index: the index of the string
  * @c: the character to append to the buffer
