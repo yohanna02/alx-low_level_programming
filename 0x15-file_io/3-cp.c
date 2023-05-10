@@ -81,7 +81,7 @@ void can_read_file(int file, char *filename, int n, ...)
  */
 int main(int argc, char **argv)
 {
-	int file_to, file_from, bytes_read;
+	int file_to, file_from, bytes_read, bytes_written;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -107,7 +107,14 @@ int main(int argc, char **argv)
 		if (bytes_read == 0)
 			break;
 
-		write(file_to, buffer, bytes_read);
+		bytes_written = write(file_to, buffer, bytes_read);
+		if (bytes_written != bytes_read)
+		{
+			close_file(file_from);
+			close_file(file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	close_file(file_from);
 	close_file(file_to);
