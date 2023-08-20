@@ -49,7 +49,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 
 	prev_index = index - 1;
-	prev_list = get_nodeint_at_index(*head, prev_index);
+	prev_list = get_dnodeint_at_index(*head, prev_index);
 	if (prev_list == NULL || prev_list->next == NULL)
 	{
 		return (-1);
