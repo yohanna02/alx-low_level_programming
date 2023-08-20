@@ -9,34 +9,19 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
-	int found = 0;
 	dlistint_t *temp = head;
-
-	if (head == NULL)
-	{
-		return (NULL);
-	}
 
 	while (temp != NULL)
 	{
-		found = 0;
 		if (i == index)
 		{
-			found = 1;
-			break;
+			return (temp);
 		}
 
 		temp = temp->next;
 		i++;
 	}
-	if (found)
-	{
-		return (temp);
-	}
-	else
-	{
-		return (NULL);
-	}
+	return (NULL);
 }
 
 /**
@@ -56,14 +41,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	}
 	new_list->n = n;
-	if (h == NULL)
-	{
-		free(new_list);
-		return (NULL);
-	}
+	new_list->next = NULL;
+	new_list->prev = NULL;
 	if (idx == 0)
 	{
 		new_list->next = *h;
+		if (*h != NULL)
+		{
+			(*h)->prev = new_list;
+		}
 		*h = new_list;
 		return (new_list);
 	}
@@ -74,6 +60,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	}
 	new_list->next = prev_list->next;
+	if (prev_list->next != NULL)
+	{
+		prev_list->next->prev = new_list;
+	}
 	prev_list->next = new_list;
+	new_list->prev = prev_list;
 	return (new_list);
 }
