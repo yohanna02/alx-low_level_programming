@@ -40,8 +40,8 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 }
 
 /**
- * insert_nodeint_at_index - Insert node at index
- * @head: head of list
+ * insert_dnodeint_at_index - Insert node at index
+ * @h: head of list
  * @idx: Index of node to insert
  * @n: value of node to insert
  * Return: Pointer to inserted node
